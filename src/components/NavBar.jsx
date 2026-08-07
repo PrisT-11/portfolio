@@ -10,15 +10,25 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
-const pages = ['Portfolio', 'Contact'];
-
 function NavBar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 70;
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerOffset;
 
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+            });
+        }
+    };
+
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
@@ -28,53 +38,57 @@ function NavBar() {
         <AppBar position="sticky">
             <Container maxWidth="100%">
                 <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        // component="a"
-                        // href="#top"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
+                    <Button disableRipple onClick={() => scrollToSection('top')}
+                        sx={{ color: 'white', display: { xs: 'none', md: 'flex' }, onClick: { backgroundColor: 'transparent' }}}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            sx={{
+                                mr: 2,
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'inherit',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            Priscilla Thung
+                        </Typography>
+                    </Button>
 
-                        }}
-                    >
-                        Portfolio
-                    </Typography>
                     <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block', padding: "20px", margin: "0" }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        <Button
+                            onClick={() => scrollToSection('portfolio')}
+                            sx={{ my: 2, color: 'white', display: 'block', padding: "20px", margin: "0" }}
+                        >
+                            Portfolio
+                        </Button>
+                        <Button
+                            onClick={() => scrollToSection('contact')}
+                            sx={{ my: 2, color: 'white', display: 'block', padding: "20px", margin: "0" }}
+                        >
+                            Contact
+                        </Button>
                     </Box>
 
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        Portfolio
-                    </Typography>
-
+                    <Button disableRipple onClick={() => scrollToSection('top') }
+                        sx={{ color: 'white', display: { xs: 'flex', md: 'none' }, onClick: { backgroundColor: 'transparent' } }}>
+                        <Typography
+                            variant="h5"
+                            noWrap
+                            sx={{
+                                mr: 2,
+                                flexGrow: 1,
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'inherit',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            Priscilla Thung
+                        </Typography>
+                    </Button>
 
                     <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -100,11 +114,18 @@ function NavBar() {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem key="Portfolio" onClick={() => {
+                                handleCloseNavMenu();
+                                scrollToSection('portfolio');
+                            }}>
+                                <Typography sx={{ textAlign: 'center' }}>Portfolio</Typography>
+                            </MenuItem>
+                            <MenuItem key="Contact" onClick={() => {
+                                handleCloseNavMenu();
+                                scrollToSection('contact');
+                            }}>
+                                <Typography sx={{ textAlign: 'center' }}>Contact</Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
