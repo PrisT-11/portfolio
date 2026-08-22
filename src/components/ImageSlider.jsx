@@ -3,8 +3,9 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import { Card, CardMedia } from "@mui/material";
 import "./image-slider.css"
-
+import VRGame from '../assets/videos/Priscilla_VrGame.mp4'
 
 export default function ImageSlider({ images }) {
   const [imageIndex, setImageIndex] = useState(0)
@@ -37,7 +38,40 @@ export default function ImageSlider({ images }) {
           overflow: "hidden",
         }}
       >
+        {/* <Card key={images[0].img} sx={{translate: `${-100 * imageIndex}%`,  backgroundColor: "black", display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <CardMedia
+            component="img"
+            image={images[0].img}
+            alt={images[0].title}
+            sx={{ objectFit: "contain"}}
+          />
+        </Card>
+        {/* <Card key={images[8].img} sx={{ width: "100%", backgroundColor: "white", margin: "auto"  }}>
+          <CardMedia
+            component="img"
+            image={images[8].img}
+            alt={images[8].title}
+            sx={{ objectFit: "contain", margin: "0 auto" }}
+          />
+        </Card> *
+        <Card key={VRGame} sx={{ width: "100%", backgroundColor: "white", margin: "auto"  }}>
+          <CardMedia
+            component="video"
+            controls
+            image={VRGame}
+            alt={images[8].title}
+            sx={{ objectFit: "contain", margin: "0 auto" }}
+          />
+        </Card> */}
         {images.map((image, index) => (
+        //  <Card key={image.img} sx={{translate: `${-100 * imageIndex}%`,  backgroundColor: "black", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        //   <CardMedia
+        //     component="img"
+        //     image={image.img}
+        //     alt={image.title}
+        //     sx={{ objectFit: "contain"}}
+        //   />
+        // </Card>
           <img
             key={image.img}
             src={image.img}
@@ -78,7 +112,7 @@ export default function ImageSlider({ images }) {
       >
         {images.map((_, index) => (
           <button
-          type="button"
+            type="button"
             key={index}
             className="img-slider-dot-btn"
             aria-label={`View Image ${index + 1}`}

@@ -11,6 +11,7 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import PortfolioList from './components/PortfolioList';
 import ImageSlider from './components/ImageSlider';
+import Carousel from './components/Carousel';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <section id="top">
         <div className="highlights">
           <h1>Priscilla Thung</h1>
-          <ImageSlider images={itemData}/>
+          <Carousel images={itemData}/>
         </div>
       </section>
       <section id="spacer"></section>
