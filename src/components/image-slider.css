@@ -4,21 +4,15 @@
   box-sizing: border-box;
 }
 
-.img-slider-img {
-  object-fit: cover;
-  width: 100%;
-  display: block;
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
 .img-slider-btn {
   all: unset;
   display: block;
   position: absolute;
   top: 0;
   bottom: 0;
+  height: 20%;
   padding: 1rem;
+  margin: auto;
   cursor: pointer;
   transition: background-color 100ms ease-in-out;
 }

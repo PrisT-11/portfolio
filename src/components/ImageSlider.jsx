@@ -98,7 +98,7 @@ export default function ImageSlider({ images }) {
         style={{ right: 0 }}
         aria-label="View Next Image"
       >
-        <ArrowForwardIosIcon aria-hidden />
+      <ArrowForwardIosIcon aria-hidden />
       </button>
       <div
         style={{
