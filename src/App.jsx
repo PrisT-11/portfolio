@@ -10,7 +10,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import PortfolioList from './components/PortfolioList';
-import ImageSlider from './components/ImageSlider';
 import Carousel from './components/Carousel';
 import VRGame from './assets/videos/Priscilla_VrGame.mp4'
 import Gaiaus from './assets/images/gaiaus.png'
@@ -24,7 +23,15 @@ function App() {
       <section id="top">
         <div className="highlights">
           <h1>Priscilla Thung</h1>
+                      <Box
+                sx={{
+                    width: { xs: "85%", md:"70%", lg:"63%", xl: "55%" },
+                    margin: "0 auto",
+                    display: "flex"
+                }}
+            >
           <Carousel images={itemData}/>
+          </Box>
         </div>
       </section>
       <section id="spacer"></section>

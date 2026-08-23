@@ -37,21 +37,21 @@ export default function Carousel({ images }) {
         if (!images || images.length === 0) return;
 
         const imagePromises = images
-        .filter((image) => image.isImg)
-        .map((image) => {
-                return new Promise((resolve) => {              
-                        const img = new Image();
-                        img.onload = () => {
-                            resolve(img.width / img.height);
-                        };
+            .filter((image) => image.isImg)
+            .map((image) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        resolve(img.width / img.height);
+                    };
 
-                        img.onerror = () => {
-                            resolve(1);
-                        };
-                        img.src = image.img;
+                    img.onerror = () => {
+                        resolve(1);
+                    };
+                    img.src = image.img;
 
                 });
-        });
+            });
 
         if (imagePromises.length === 0) return;
 
@@ -63,107 +63,97 @@ export default function Carousel({ images }) {
     }, [images]);
 
     return (
-        <div>
-            <Box
-                sx={{
-                    width: { xs: "85%", md: "55%" },
-                    margin: "0 auto",
-                    display: "flex"
-                }}
-            >
-                <section
-                    aria-label="Image Slider"
-                    style={{
+        <section
+            aria-label="Image Slider"
+            style={{
+                width: "100%",
+                aspectRatio: maxAspectRatio,
+                position: "relative",
+                margin: "0 auto",
+                backgroundColor: "black",
+            }}
+        >
+            {images.map((image, index) => (
+                <Box
+                    key={`card-${index}`}
+                    sx={{
                         width: "100%",
-                        aspectRatio: maxAspectRatio,
-                        position: "relative",
-                        margin: "0 auto",
-                        backgroundColor: "black",
+                        height: "100%",
+                        display:
+                            currentPage === index ? "flex" : "none",
                     }}
                 >
-                    {images.map((image, index) => (
-                        <Box
-                            key={`card-${index}`}
+                    <Slide
+                        direction={slideDirection}
+                        in={currentPage === index}
+                    >
+                        <Stack
+                            spacing={2}
+                            direction="row"
                             sx={{
                                 width: "100%",
                                 height: "100%",
-                                display:
-                                    currentPage === index ? "flex" : "none",
                             }}
                         >
-                            <Slide
-                                direction={slideDirection}
-                                in={currentPage === index}
-                            >
-                                <Stack
-                                    spacing={2}
-                                    direction="row"
-                                    sx={{
-                                        width: "100%",
-                                        height: "100%",
-                                    }}
-                                >
-                                    <CardImage image={image} />
-                                </Stack>
-                            </Slide>
-                        </Box>
-                    ))}
+                            <CardImage image={image} />
+                        </Stack>
+                    </Slide>
+                </Box>
+            ))}
 
+            <button
+                type="button"
+                onClick={handlePrevPage}
+                className="img-slider-btn"
+                style={{ left: 0 }}
+                aria-label="View Previous Image"
+            >
+                <ArrowBackIosNewIcon aria-hidden />
+            </button>
+
+            <button
+                type="button"
+                onClick={handleNextPage}
+                className="img-slider-btn"
+                style={{ right: 0 }}
+                aria-label="View Next Image"
+            >
+                <ArrowForwardIosIcon aria-hidden />
+            </button>
+
+            <div
+                style={{
+                    position: "absolute",
+                    bottom: ".5rem",
+                    left: "50%",
+                    translate: "-50%",
+                    display: "flex",
+                    gap: ".25rem",
+                }}
+            >
+                {images.map((_, index) => (
                     <button
                         type="button"
-                        onClick={handlePrevPage}
-                        className="img-slider-btn"
-                        style={{ left: 0 }}
-                        aria-label="View Previous Image"
-                    >
-                        <ArrowBackIosNewIcon aria-hidden />
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={handleNextPage}
-                        className="img-slider-btn"
-                        style={{ right: 0 }}
-                        aria-label="View Next Image"
-                    >
-                        <ArrowForwardIosIcon aria-hidden />
-                    </button>
-
-                    <div
-                        style={{
-                            position: "absolute",
-                            bottom: ".5rem",
-                            left: "50%",
-                            translate: "-50%",
-                            display: "flex",
-                            gap: ".25rem",
+                        key={index}
+                        className="img-slider-dot-btn"
+                        aria-label={`View Image ${index + 1}`}
+                        onClick={() => {
+                            setCurrentPage(index);
+                            setSlideDirection(
+                                index > currentPage
+                                    ? "left"
+                                    : "right"
+                            );
                         }}
                     >
-                        {images.map((_, index) => (
-                            <button
-                                type="button"
-                                key={index}
-                                className="img-slider-dot-btn"
-                                aria-label={`View Image ${index + 1}`}
-                                onClick={() => {
-                                    setCurrentPage(index);
-                                    setSlideDirection(
-                                        index > currentPage
-                                            ? "left"
-                                            : "right"
-                                    );
-                                }}
-                            >
-                                {index === currentPage ? (
-                                    <RadioButtonCheckedIcon aria-hidden />
-                                ) : (
-                                    <RadioButtonUncheckedIcon aria-hidden />
-                                )}
-                            </button>
-                        ))}
-                    </div>
-                </section>
-            </Box>      
-        </div>
+                        {index === currentPage ? (
+                            <RadioButtonCheckedIcon aria-hidden />
+                        ) : (
+                            <RadioButtonUncheckedIcon aria-hidden />
+                        )}
+                    </button>
+                ))}
+            </div>
+        </section>
     );
 }
