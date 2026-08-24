@@ -12,6 +12,7 @@ import Skills from './components/Skills';
 import PortfolioList from './components/PortfolioList';
 import Carousel from './components/Carousel';
 import highlightData from './data/highlightdata';
+import { Typography } from "@mui/material";
 
 function App() {
 
@@ -67,7 +68,16 @@ function App() {
       <section id="spacer"></section>
 
       <section id="footer">
-        <Stack direction="row" spacing={1} sx={{ justifyContent: "center", alignItems: "center", marginBottom: "10px" }}>
+        <Typography variant="h5" sx={{ marginBottom: "1rem" }}>
+          Thanks for looking through my portfolio!
+        </Typography>
+        <Typography variant="h6">
+          Get in touch with me at:
+        </Typography>
+        <Typography variant="body1" >
+          priscillathung11@gmail.com
+        </Typography>
+        <Stack direction="row" spacing={1} sx={{ justifyContent: "center", alignItems: "center", marginBottom: "1rem" }}>
           <IconButton color="primary" href="https://linkedin.com/in/priscilla-thung">
             <LinkedInIcon />
           </IconButton>
@@ -75,7 +85,9 @@ function App() {
             <GitHubIcon />
           </IconButton>
         </Stack>
-        <p>© 2026 by Priscilla Thung</p>
+        <Typography variant="body2" >
+          © 2026 by Priscilla Thung
+        </Typography>
       </section>
     </>
   )

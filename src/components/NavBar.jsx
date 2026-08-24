@@ -64,7 +64,7 @@ function NavBar() {
                             Portfolio
                         </Button>
                         <Button
-                            onClick={() => scrollToSection('contact')}
+                            onClick={() => scrollToSection('footer')}
                             sx={{ my: 2, color: 'white', display: 'block', padding: "20px", margin: "0" }}
                         >
                             Contact
@@ -122,7 +122,7 @@ function NavBar() {
                             </MenuItem>
                             <MenuItem key="Contact" onClick={() => {
                                 handleCloseNavMenu();
-                                scrollToSection('contact');
+                                scrollToSection('footer');
                             }}>
                                 <Typography sx={{ textAlign: 'center' }}>Contact</Typography>
                             </MenuItem>
