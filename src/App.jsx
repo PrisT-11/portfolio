@@ -11,7 +11,6 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import PortfolioList from './components/PortfolioList';
 import Carousel from './components/Carousel';
-import Gaiaus from './assets/images/gaiaus.png'
 import highlightData from './data/highlightdata';
 
 function App() {
