@@ -9,8 +9,8 @@ export default function PortfolioList() {
     <div>
     <Container maxWidth="xl">
       <Box sx={{ width: { xs: '90%', md: '70%' }, margin: "0 auto", display: 'table' }}>
-        <Grid container spacing={1} sx={{ alignItems: "flex-start"}}>
-            {PortfolioData.map((item) => (
+        <Grid container spacing={1} sx={{ alignItems: "flex-start", }}>
+            {PortfolioData.toReversed().map((item) => (
             <Grid size={4} key={item.title}>
                 <PortfolioItem item={item} />
             </Grid>
