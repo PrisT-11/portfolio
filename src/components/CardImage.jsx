@@ -7,11 +7,9 @@ export default function CardImage({ image }) {
             sx={{
                 width: "100%",
                 height: "100%",
-                backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                overflow: "hidden",
             }}
         >
             {image.isImg ?
@@ -23,20 +21,21 @@ export default function CardImage({ image }) {
                         width: "100%",
                         height: "100%",
                         objectFit: "contain",
+                        backgroundColor: "#000",
                     }}
                 /> :
                 <CardMedia
-                    component="video"
-                    image={image.img}
+                    component="iframe"
+                    src={image.img}
                     alt={image.title}
-                    controls
+                    frameBorder="0"
                     sx={{
                         width: "100%",
                         height: "100%",
                         objectFit: "contain",
                     }}
                 />
-            } 
+            }
         </Card>
     );
 }

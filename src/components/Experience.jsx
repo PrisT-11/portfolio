@@ -6,7 +6,7 @@ export default function Experience() {
             <Typography variant="h4" style={{ textAlign: "left", margin: "0" }}>
                 Experience:
             </Typography>
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+            <Typography variant="h6" style={{ textAlign: "left", margin: "0"}}>
                 <b>NCS Group</b> - <i>Software Engineer</i>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>
@@ -15,8 +15,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 PLACEHOLDER
             </Typography>
-            <br />
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+
+            <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem"  }}>
                 <b>NCS Group</b> - <i>Software Engineer Intern</i>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>
@@ -25,8 +25,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 Assisted in migrating and developing a website from a .NET framework to Java Spring Boot framework.
             </Typography>
-            <br />
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+
+            <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem" }}>
                 <b>Ngee Ann Polytechnic</b> - <i>Content Developer</i>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>
@@ -35,8 +35,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 Collaborated with other trainees and the course module lead to design and develop a point-and-click game in Unity for the Landscape Design and Horticulture course, improving student’s learning retention.
             </Typography>
-            <br />
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+
+            <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem" }}>
                 <b>Singapore Polytechnic</b> - <i>Game Developer</i>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>
@@ -45,8 +45,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 Communicated effectively with the supervisor to develop an arcade game in Unity to raise awareness on scams, the game was launched by the Singapore Police Force at the Delta League in 2022.
             </Typography>
-            <br />
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+
+            <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem"}}>
                 <b>Ministry of Education</b> - <i>Game Developer Intern</i>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>
@@ -55,8 +55,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 Developed games to gamify learning of protocols and procedures for customer service staff at MOE, improving staff knowledge retention.
             </Typography>
-            <br />
-            <Typography variant="h4" style={{ textAlign: "left", margin: "0" }}>
+   
+            <Typography variant="h4" style={{ textAlign: "left", marginTop: "2rem"}}>
                 Education:
             </Typography>
             <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
@@ -68,8 +68,8 @@ export default function Experience() {
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
                 Bachelor of Science in Computing Science
             </Typography>
-            <br />
-            <Typography variant="h6" style={{ textAlign: "left", margin: "0" }}>
+
+            <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem"}}>
                 <b>Singapore Polytechnic</b>
             </Typography>
             <Typography variant="body1" style={{ textAlign: "left", margin: "0" }}>

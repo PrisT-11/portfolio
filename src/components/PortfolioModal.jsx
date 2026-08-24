@@ -8,9 +8,8 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Carousel from './Carousel';
-import VRGame from '../assets/videos/Priscilla_VrGame.mp4'
 
-export default function PortfolioModal({ handleClose, open }) {
+export default function PortfolioModal({ handleClose, open, item }) {
 
     const descriptionElementRef = React.useRef(null);
     React.useEffect(() => {
@@ -36,7 +35,7 @@ export default function PortfolioModal({ handleClose, open }) {
                     background: '#3d3d3d'
                 },
             }}>
-            <DialogTitle id="scroll-dialog-title">Game/Project Title</DialogTitle>
+            <DialogTitle id="scroll-dialog-title">{item.title}</DialogTitle>
             <IconButton
                 aria-label="close"
                 onClick={handleClose}
@@ -51,80 +50,76 @@ export default function PortfolioModal({ handleClose, open }) {
             </IconButton>
             <DialogContent dividers>
                 <Grid container spacing={3}>
-                    <Grid size={8}>
-                        <Carousel images={itemData} />
+                    <Grid size={{md:12, lg: 8}}>
+                        <Carousel images={item.carousel} />
                     </Grid>
 
-                    <Grid size={4} >
+                    <Grid size={{md:12, lg: 4}} >
                         <Stack
                             direction="column"
-                            spacing={2}
                             sx={{
                                 justifyContent: "center",
                                 alignItems: "flex-start",
                             }}
                         >
-                            <Typography id="transition-modal-title" variant="body1" component="h2">
+                            <Typography id="transition-modal-title" variant="h6" component="h2">
                                 Platform:
                             </Typography>
                             <Typography id="transition-modal-title" variant="body1" component="h2">
+                                {item.plaform}
+                            </Typography>
+                            <br />
+                            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
                                 Duration:
                             </Typography>
                             <Typography id="transition-modal-title" variant="body1" component="h2">
+                                {item.duration}
+                            </Typography>
+                            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
                                 Team size:
                             </Typography>
                             <Typography id="transition-modal-title" variant="body1" component="h2">
+                                {item.teamSize}
+                            </Typography>
+                            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
                                 Roles:
                             </Typography>
                             <Typography id="transition-modal-title" variant="body1" component="h2">
+                                {item.roles}
+                            </Typography>
+                            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
                                 Tools used:
                             </Typography>
                             <Typography id="transition-modal-title" variant="body1" component="h2">
-                                Description:
+                                {item.toolsUsed}
                             </Typography>
-
+                            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
+                                Overview:
+                            </Typography>
+                            <Typography id="transition-modal-title" variant="body1" component="h2">
+                                {item.overview}
+                            </Typography>
                         </Stack>
                     </Grid>
 
                     <Grid size={12}>
                         <Typography id="transition-modal-title" variant="h4" component="h2">
+                            Description:
+                        </Typography>
+                        <Typography id="transition-modal-title" variant="body1" component="h2" style={{ whiteSpace: "pre-line" }}>
+                            {item.desc}
+                        </Typography>
+                        <Typography id="transition-modal-title" variant="h4" component="h2" style={{ marginTop: "1rem" }}>
                             Contributions:
                         </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2">
-                            PLACEHOLDER
+                        <Typography id="transition-modal-title" variant="body1" component="h2" >
+                            <ul>
+                                {item.contributions?.map((contribution, index) => (
+                                    <li key={index}>
+                                        {contribution}
+                                    </li>
+                                ))}
+                            </ul>
                         </Typography>
                     </Grid>
                 </Grid>
@@ -133,67 +128,3 @@ export default function PortfolioModal({ handleClose, open }) {
         </Dialog>
     );
 }
-
-
-const itemData = [
-    {
-        img: VRGame,
-        title: 'VR game',
-        isImg: false
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        title: 'Breakfast',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title: 'Burger',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-        title: 'Camera',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title: 'Coffee',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-        title: 'Hats',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-        title: 'Honey',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-        title: 'Basketball',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-        title: 'Mushrooms',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-        title: 'Tomato basil',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-        title: 'Sea star',
-        isImg: true
-    },
-    {
-        img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-        title: 'Bike',
-        isImg: true
-    },
-];

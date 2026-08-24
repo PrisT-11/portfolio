@@ -32,7 +32,6 @@ export default function Carousel({ images }) {
         });
     };
 
-    // Find the aspect ratio of the widest/tallest image
     useEffect(() => {
         if (!images || images.length === 0) return;
 
@@ -41,6 +40,7 @@ export default function Carousel({ images }) {
             .map((image) => {
                 return new Promise((resolve) => {
                     const img = new Image();
+
                     img.onload = () => {
                         resolve(img.width / img.height);
                     };
@@ -48,15 +48,14 @@ export default function Carousel({ images }) {
                     img.onerror = () => {
                         resolve(1);
                     };
-                    img.src = image.img;
 
+                    img.src = image.img;
                 });
             });
 
         if (imagePromises.length === 0) return;
 
         Promise.all(imagePromises).then((ratios) => {
-            // Smallest ratio = tallest image
             const tallestImageRatio = Math.min(...ratios);
             setMaxAspectRatio(tallestImageRatio);
         });
@@ -67,10 +66,14 @@ export default function Carousel({ images }) {
             aria-label="Image Slider"
             style={{
                 width: "100%",
+                // Keeps your calculated aspect ratio
+                // but prevents the carousel from getting taller than 500px
                 aspectRatio: maxAspectRatio,
+                maxHeight: "600px",
                 position: "relative",
                 margin: "0 auto",
-                backgroundColor: "black",
+                backgroundColor: "#000",
+                overflow: "hidden",
             }}
         >
             {images.map((image, index) => (

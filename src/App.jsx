@@ -11,8 +11,8 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import PortfolioList from './components/PortfolioList';
 import Carousel from './components/Carousel';
-import VRGame from './assets/videos/Priscilla_VrGame.mp4'
 import Gaiaus from './assets/images/gaiaus.png'
+import highlightData from './data/highlightdata';
 
 function App() {
 
@@ -23,14 +23,14 @@ function App() {
       <section id="top">
         <div className="highlights">
           <h1>Priscilla Thung</h1>
-                      <Box
-                sx={{
-                    width: { xs: "85%", md:"70%", lg:"63%", xl: "55%" },
-                    margin: "0 auto",
-                    display: "flex"
-                }}
-            >
-          <Carousel images={itemData}/>
+          <Box
+            sx={{
+              width: { xs: "85%", md: "70%", lg: "63%", xl: "55%" },
+              margin: "0 auto",
+              display: "flex"
+            }}
+          >
+            <Carousel images={highlightData} />
           </Box>
         </div>
       </section>
@@ -83,67 +83,3 @@ function App() {
 }
 
 export default App
-
-
-const itemData = [
-  {
-    img: VRGame,
-    title: 'VR game',
-    isImg: false
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    isImg: true
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    isImg: true
-  },
-];

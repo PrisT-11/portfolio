@@ -2,7 +2,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import React from 'react';
-import Gaiaus from '../assets/images/gaiaus.png'
 import PortfolioModal from './PortfolioModal';
 
 const noPadding = {
@@ -12,7 +11,7 @@ const noPadding = {
     }
 };
 
-export default function PortfolioItem({ title, year, image }) {
+export default function PortfolioItem({item}) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -32,8 +31,8 @@ export default function PortfolioItem({ title, year, image }) {
                 sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 onClick={handleOpen}>
                     <img
-                        src={Gaiaus}
-                        alt={title}
+                        src={item.src}
+                        alt={item.title}
                         style={{
                             position: 'absolute',
                             top: 0,
@@ -45,7 +44,7 @@ export default function PortfolioItem({ title, year, image }) {
                     />
                 </Button>
             </Box>
-            <PortfolioModal handleClose={handleClose} open={open}/>
+            <PortfolioModal handleClose={handleClose} open={open} item={item}/>
         </Container>
     );
 }
