@@ -22,7 +22,18 @@ function App() {
 
       <section id="top">
         <div className="highlights">
-          <h1>Priscilla Thung</h1>
+          <Box sx={{ width: { xs: "90%", md: "55%" }, margin: "0 auto", }}>
+            <Typography variant="h3" sx={{ color: 'white', marginTop: '1rem', marginBottom: "2rem" }}>
+              Hi, I'm Priscilla!
+            </Typography>
+            <Typography variant="h5" sx={{ marginBottom: "1rem" }}>
+              I'm a game programmer and designer that enjoys looking at game systems and understanding how and why they work.
+            </Typography>
+            <Typography variant="h5" sx={{ marginBottom: "2rem" }}>
+              Here you can see the projects I've worked on!
+            </Typography>
+          </Box>
+
           <Box
             sx={{
               width: { xs: "85%", md: "70%", lg: "63%", xl: "55%" },
@@ -38,7 +49,7 @@ function App() {
 
       <section id="experience">
         <Container maxWidth="xl">
-          <Box sx={{ width: "70%", margin: "0 auto", display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ width: { xs: "90%", md: "70%" }, margin: "0 auto", display: 'flex' }}>
             <Grid container spacing={1} sx={{ justifyContent: "space-between", alignItems: "flex-start", padding: "0" }}>
               <Grid size={{ md: 12, lg: 6 }}>
                 <Experience />
@@ -48,16 +59,7 @@ function App() {
               </Grid>
             </Grid>
           </Box>
-          <Box sx={{ width: "90%", margin: "0 auto", display: { xs: 'flex', md: 'none' } }}>
-            <Grid container spacing={1} sx={{ justifyContent: "space-between", alignItems: "flex-start", padding: "0" }}>
-              <Grid size={12}>
-                <Experience />
-              </Grid>
-              <Grid size={12}>
-                <Skills />
-              </Grid>
-            </Grid>
-          </Box>
+
         </Container>
       </section>
       <section id="spacer"></section>

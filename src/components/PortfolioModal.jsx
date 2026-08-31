@@ -68,7 +68,6 @@ export default function PortfolioModal({ handleClose, open, item }) {
                             <Typography id="transition-modal-title" variant="body1" component="h2">
                                 {item.plaform}
                             </Typography>
-                            <br />
                             <Typography id="transition-modal-title" variant="h6" component="h2" style={{ marginTop: "1rem" }}>
                                 Duration:
                             </Typography>
@@ -104,13 +103,7 @@ export default function PortfolioModal({ handleClose, open, item }) {
 
                     <Grid size={12}>
                         <Typography id="transition-modal-title" variant="h4" component="h2">
-                            Description:
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="body1" component="h2" style={{ whiteSpace: "pre-line" }}>
-                            {item.desc}
-                        </Typography>
-                        <Typography id="transition-modal-title" variant="h4" component="h2" style={{ marginTop: "1rem" }}>
-                            Contributions:
+                            Responsibilities:
                         </Typography>
                         <Typography id="transition-modal-title" variant="body1" component="h2" >
                             <ul>
@@ -120,6 +113,12 @@ export default function PortfolioModal({ handleClose, open, item }) {
                                     </li>
                                 ))}
                             </ul>
+                        </Typography>
+                        <Typography id="transition-modal-title" variant="h4" component="h2" style={{ marginTop: "1rem", marginBottom: '0.5rem' }}>
+                            Project description:
+                        </Typography>
+                        <Typography id="transition-modal-title" variant="body1" component="h2" style={{ whiteSpace: "pre-line" }}>
+                            {item.desc}
                         </Typography>
                     </Grid>
                 </Grid>

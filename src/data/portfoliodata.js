@@ -48,7 +48,7 @@ const PortfolioData = [
         toolsUsed: 'Unity',
         overview: 'A 2D platformer where players help a robot to save his girl from the evil boss.',
         desc: 'There\'s 2 different kinds of enemies, 1 that shoots bullets and 1 that hurts the player by touching them. There are also movable platforms in the game which is important in the boss fight.\nIn the boss fight, players have to make use of the movable platforms in order to shoot at the boss.The boss will move left and right which makes it harder for the player to hit it. The boss will also fire a bullet that follows the player until either 3 seconds is up or if the bullet hits an object.',
-        contributions: ['Programmed player controls', 'Created enemy and boss AI'],
+        contributions: ['Programmed player controls using Unity\'s Input system', 'Scripted enemy and boss AI using Unity\'s Raycast System'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/eJGmZQmmgTk?si=yEUF4PBotge1poY8',
@@ -92,7 +92,7 @@ const PortfolioData = [
         toolsUsed: 'Unity, 3DS Max, Photoshop',
         overview: 'A 3D puzzle game cube where players take control a sheepdog and push the cows into their pens.',
         desc: 'The goal of this game is to get the cow into the pen before the player runs out of moves. \nThere are 3 different cubes apart from the player\'s cube, the pig, sheep and cow. The pig and sheep cubes will move one block in the direction the player pushes it, and the sheep is used to unlock the trampoline for the player to reach the higher levels. The cow will continuously move in the direction that the player pushes it until it is stopped by an obstacle.',
-        contributions: ['Programmed gameplay functions', 'Designed the art assets', 'Designed game levels'],
+        contributions: ['Scripted cube rolling system', 'Designed rt assets using 3DS Max and Photoshop', 'Designed game levels with increasing difficulty'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/FtQWxcrIrGI?si=aNZKBIrDQLrPZ_pz',
@@ -136,7 +136,7 @@ const PortfolioData = [
         toolsUsed: 'Unity',
         overview: 'A match 3 game made for C3AFA which is done in unity. Players have to cheer customers up by changing Seika-chan\'s costume.',
         desc: '',
-        contributions: ['Programmed main gameplay mechanic', 'Programmed enemy behaviour', 'Programmed player and enemy interactions'],
+        contributions: ['Scripted match 3 system using 2d Arrays.', 'Scripted player and enemy interactions.'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/wy8N7xFQJqU?si=E76hOXfaioF01THL',
@@ -180,7 +180,7 @@ const PortfolioData = [
         toolsUsed: 'Unity',
         overview: 'A mobile physics game where players have to transport the egg to the end by drawing lines.',
         desc: 'Players have to draw lines for the egg to roll on. There is a gauge on the top of the screen showing how much ink is there left and the amount of ink the player can use before the number of stars for the level decreases. The player can change the lines to a booster line which will increase the speed of the egg.\nThe egg has to avoid obstacles to reach the end. It will also break if it goes too fast.',
-        contributions: ['Designed game levels and mechanics', 'Programmed gameplay mechanics'],
+        contributions: ['Built egg movement system using Unity\'s Physics Engine', 'Scripted ink system', 'Designed game levels with increasing difficulty'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/HN389IQfL60?si=1b_Hj1_LGbY3d8pb',
@@ -214,45 +214,45 @@ const PortfolioData = [
             },
         ],
     },
-    {
-        src: WWTMain,
-        title: 'World War Toys',
-        plaform: 'Desktop',
-        duration: '20 Weeks',
-        teamSize: '6 Members',
-        roles: 'Programmer',
-        toolsUsed: 'Unity',
-        overview: 'A tower defense game where players take control of various toy weapons to prevent toy animals from reaching the end.',
-        desc: 'Players have to protect their base from the toy animals and the lanes that toy animals take have different heights. Players have to place down turrets in order to prevent the toy animals from reaching the base. Players also have to stack the turrets in order to reach the lanes that are higher up.\nThere are 5 different types of turrets and 4 different enemies.',
-        contributions: ['Programmed building mechanics', 'Programmed enemy mechanics', 'Programmed boss mechanic'],
-        carousel: [
-            // {
-            //     img: 'https://www.youtube.com/embed/HN389IQfL60?si=1b_Hj1_LGbY3d8pb',
-            //     title: 'Travel Egg Gameplay Video',
-            //     isImg: false,
-            // },
-            {
-                img: WWTMain,
-                title: 'World War Toys Main Screen',
-                isImg: true,
-            },
-            {
-                img: WWTGameplay1,
-                title: 'World War Toys Gameplay Screenshot',
-                isImg: true,
-            },
-            {
-                img: WWTGameplay2,
-                title: 'World War Toys Gameplay Screenshot',
-                isImg: true,
-            },
-            {
-                img: WWTGameplay3,
-                title: 'World War Toys Gameplay Screenshot',
-                isImg: true,
-            },
-        ],
-    },
+    // {
+    //     src: WWTMain,
+    //     title: 'World War Toys',
+    //     plaform: 'Desktop',
+    //     duration: '20 Weeks',
+    //     teamSize: '6 Members',
+    //     roles: 'Programmer',
+    //     toolsUsed: 'Unity',
+    //     overview: 'A tower defense game where players take control of various toy weapons to prevent toy animals from reaching the end.',
+    //     desc: 'Players have to protect their base from the toy animals and the lanes that toy animals take have different heights. Players have to place down turrets in order to prevent the toy animals from reaching the base. Players also have to stack the turrets in order to reach the lanes that are higher up.\nThere are 5 different types of turrets and 4 different enemies.',
+    //     contributions: ['Built turret building system using Unity\'s Raycast System', 'Scripted enemy mechanics using Unity\'s NavMesh system', 'Scripted boss mechanic and movement'],
+    //     carousel: [
+    //         // {
+    //         //     img: 'https://www.youtube.com/embed/HN389IQfL60?si=1b_Hj1_LGbY3d8pb',
+    //         //     title: 'Travel Egg Gameplay Video',
+    //         //     isImg: false,
+    //         // },
+    //         {
+    //             img: WWTMain,
+    //             title: 'World War Toys Main Screen',
+    //             isImg: true,
+    //         },
+    //         {
+    //             img: WWTGameplay1,
+    //             title: 'World War Toys Gameplay Screenshot',
+    //             isImg: true,
+    //         },
+    //         {
+    //             img: WWTGameplay2,
+    //             title: 'World War Toys Gameplay Screenshot',
+    //             isImg: true,
+    //         },
+    //         {
+    //             img: WWTGameplay3,
+    //             title: 'World War Toys Gameplay Screenshot',
+    //             isImg: true,
+    //         },
+    //     ],
+    // },
     {
         src: StackNMatchMain,
         title: 'StackNMatch',
@@ -263,7 +263,7 @@ const PortfolioData = [
         toolsUsed: 'Unity',
         overview: '​A casual AR game where players have to match blocks that fall from the sky. Made with vuforia.',
         desc: 'The blocks will fall in a 2x2 square on to the AR marker. Players have to swipe left and right to rotate the set of blocks in order to match them. The game will end when the height of the blocks exceed the height limit.',
-        contributions: ['Programmed gameplay mechanics', 'Designed gameplay mechanics'],
+        contributions: ['Scripted block falling and chaining mechanic using Unity\'s Raycast System.', 'Designed main gameplay loop.'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/ky6ZITNYeL8?si=ydzIhv_XB0paoLZt',
@@ -307,7 +307,7 @@ const PortfolioData = [
         toolsUsed: 'Unity',
         overview: 'A VR game where players have to serve burgers to the customers. Made with VRTK. ',
         desc: 'Customers will come in and have a menu above their heads with the burger they want which is randomly selected from a list. Players will then have to grab the necessary ingredients and stack them up and serve them to the customers. For every correct order, the player\'s score will increase. The game ends when the time runs out and there are no customers left in the store. ',
-        contributions: ['Programmed gameplay mechanics', 'Programmed customer mechanics', 'Designed gameplay mechanics'],
+        contributions: ['Built system to allow players to interact with and snap ingredients to each other using VRTK.', 'Built system for checking burger orders using Unity\'s Raycast system' ,'Scripted customer mechanics', 'Designed the main gameplay loop of stacking burger ingredients and serving them.'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/BYvGEROGAB0?si=FJHjb75BIkxNICqn',
@@ -349,9 +349,9 @@ const PortfolioData = [
         teamSize: '6 Members',
         roles: 'Programmer',
         toolsUsed: 'Unity',
-        overview: 'Hyakki Yako is a 3rd person hack and slash, where the player will control a shrine maiden and exorcise the demons in her village. With the power of god, she uses wind and lightning from her broom to defeat the demons. Set in the Edo period of Japan, the game has our own take on the Hyakki Yako folklore, with demons possessing lanterns, and a young shrine maiden doing her job.',
-        desc: 'The goal of the game is to defeat the boss at the end. To get to the boss, the player has to fight through the enemies in the different areas in the level. Players have 2 attacks, light and heavy, and can dash to avoid the enemy attacks. Players also can heal when they take too much damage. There are also checkpoints in the game for when the player dies in the game.',
-        contributions: ['Programmed player movement and combat mechanics', 'Programmed enemy mechanics', 'Programmed boss mechanic'],
+        overview: 'Hyakki Yako is a 3rd person hack and slash, where the player will control a shrine maiden and exorcise the demons in her village.',
+        desc: 'With the power of god, Miko uses wind and lightning from her broom to defeat the demons. Set in the Edo period of Japan, the game has our own take on the Hyakki Yako folklore, with demons possessing lanterns, and a young shrine maiden doing her job. \n\nThe goal of the game is to defeat the boss at the end. To get to the boss, the player has to fight through the enemies in the different areas in the level. Players have 2 attacks, light and heavy, and can dash to avoid the enemy attacks. Players also can heal when they take too much damage. There are also checkpoints in the game for when the player dies in the game.',
+        contributions: ['Built combat system', 'Scripted enemy mechanics using Unity\'s NavMesh system', 'Scripted boss mechanics with different mechanics in each phase.'],
         carousel: [
             {
                 img: 'https://www.youtube.com/embed/mZ3w3BIVYBk?si=XnoKr4W80Dbaftfx',

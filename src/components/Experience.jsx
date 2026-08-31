@@ -13,7 +13,7 @@ export default function Experience() {
                 Oct 2024 - Jun 2026
             </Typography>
             <Typography variant="body2" style={{ textAlign: "left", margin: "0" }}>
-                PLACEHOLDER
+                Developed webpages according to specifications and built test cases to ensure functionality and maintainability of software.
             </Typography>
 
             <Typography variant="h6" style={{ textAlign: "left", marginTop: "1rem"  }}>
